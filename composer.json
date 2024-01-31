@@ -1,0 +1,13 @@
+{
+    "name": "basic-app/theme-adminlte3",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Themes\\AdminLTE3\\": ""
+        }
+    },
+    "require": {
+        "almasaeed2010/adminlte": "3.0",
+        "league/plates": "3.*"
+    }
+}
