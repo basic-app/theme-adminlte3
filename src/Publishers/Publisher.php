@@ -3,6 +3,7 @@
 namespace Themes\AdminLTE3\Publishers;
 
 use CodeIgniter\Publisher\Publisher as BasePublisher;
+use Config\Publisher as PublisherConfig;
 
 class Publisher extends BasePublisher
 {
@@ -25,20 +26,36 @@ class Publisher extends BasePublisher
     protected $destination = FCPATH . 'themes' . DIRECTORY_SEPARATOR . 'adminlte3';
 
     /**
+     * Makes destination directory.
+     */
+    public function __construct(?string $source = null, ?string $destination = null)
+    {
+        if (!is_dir($this->destination))
+        {
+            mkdir($this->destination, 0755, true);
+        }
+
+        parent::__construct($source, $destination);
+    }
+
+    /**
      * Use the "publish" method to indicate that this
      * class is ready to be discovered and automated.
      */
     public function publish(): bool
     {
-        return $this
-            // Add all the files relative to $source
+        return $this->wipe()
             ->addPath('plugins')
             ->addPath('dist')
-
-            // Indicate we only want the minimized versions
-            //->retainPattern('*.min.*')
-
-            // Merge-and-replace to retain the original directory structure
+            ->removePattern('*.txt')
+            ->removePattern('*.js.flow')
+            ->removePattern('*.less')
+            ->removePattern('*.ts')
+            ->removePattern('*.editorconfig')
+            ->removePattern('*.md')
+            ->removePattern('*.npmignore')
+            ->removePattern('LICENSE')
             ->merge(true);
     }
+
 }
