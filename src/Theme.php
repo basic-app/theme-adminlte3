@@ -12,7 +12,7 @@ class Theme extends BaseTheme
     {
         parent::__construct(
             array_merge(
-                ['AdminLTE3' => __DIR__ . DIRECTORY_SEPARATOR . 'templates'],
+                ['AdminLTE3' => dirname(__DIR__) . DIRECTORY_SEPARATOR . 'templates'],
                 $directories
             ), 
             $fileExtension
