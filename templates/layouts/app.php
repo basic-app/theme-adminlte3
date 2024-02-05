@@ -22,7 +22,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
 
-    <?= $this->insert('layouts/parts/navbar');?>
+    <?= $this->insert('layouts/parts/navbar', ['userMenu' => $userMenu ?? []]);?>
 
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
@@ -30,11 +30,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <a href="<?= $appUrl ?? '#';?>" class="brand-link">
       <img src="<?= $this->asset('themes/adminlte3/dist/img/AdminLTELogo.png');?>" alt="" class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light"><?= $this->e($appName ?? 'AdminLTE 3');?></span>
+      <span class="brand-text font-weight-light"><?= $appName ?? 'Admin';?></span>
     </a>
 
     <!-- Sidebar -->
     <div class="sidebar">
+      
+    <?php
+    /*
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
@@ -44,6 +47,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <a href="#" class="d-block"><?= $userName ?? 'Admin' ?></a>
         </div>
       </div>
+      */?>
+
+
         <?= $this->insert('layouts/parts/nav', ['mainMenu' => $mainMenu ?? []]);?> 
     </div>
     <!-- /.sidebar -->
