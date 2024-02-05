@@ -1,0 +1,1 @@
+<span class="right badge badge-danger">New</span>
