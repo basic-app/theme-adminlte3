@@ -15,7 +15,7 @@ $active = $category['active'] ?? false;
     </a>
     <ul class="nav nav-treeview">
         <?php foreach($category['items'] as $k => $v):?>
-            <?= $this->insert('layouts/parts/nav-item', ['item' => $v]);?>
+            <?= $this->insert('layouts/parts/nav_item', ['item' => $v]);?>
         <?php endforeach;?>
     </ul>
 </li>

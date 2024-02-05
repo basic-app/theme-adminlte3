@@ -25,9 +25,9 @@ foreach($mainMenu as $key => $value)
            with font-awesome or any other icon font library -->
     <?php foreach($mainMenu as $key => $value):?>
         <?php if(array_key_exists('items', $value)):?>
-            <?= $this->insert('layouts/parts/nav-category', ['category' => $value]);?>
+            <?= $this->insert('layouts/parts/nav_category', ['category' => $value]);?>
         <?php else:?>
-            <?= $this->insert('layouts/parts/nav-item', ['item' => $value]);?>
+            <?= $this->insert('layouts/parts/nav_item', ['item' => $value]);?>
         <?php endif;?>
     <?php endforeach;?>
     </ul>
