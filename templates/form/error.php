@@ -1,0 +1,1 @@
+<?= $this->tag('div', $content, array_merge(['class' => 'invalid-feedback'], $attributes ?? []));?>
